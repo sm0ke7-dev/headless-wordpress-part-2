@@ -1,0 +1,21 @@
+"use client";
+
+import React from "react";
+
+export function Header64({ data }) {
+  const heading = data?.location_hero_heading || data?.title || "We're here for you";
+  const description = data?.location_hero_description || "Expert care and real results at your local Physio Pain Center clinic";
+
+  return (
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container max-w-lg text-center">
+        <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+          {heading}
+        </h1>
+        <p className="md:text-md">
+          {description}
+        </p>
+      </div>
+    </section>
+  );
+}
