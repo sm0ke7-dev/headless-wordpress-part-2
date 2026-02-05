@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar8 } from "./components/Navbar8";
+import { Navbar8 } from "../components/Navbar8";
 import { Header64 } from "./components/Header64";
 import { Layout423 } from "./components/Layout423";
 import { Layout525 } from "./components/Layout525";

@@ -1,4 +1,4 @@
-import { getLocation, getLocations } from "../../../lib/wp";
+import { getLocation, getLocations, getFeaturedImageUrl } from "../../../lib/wp";
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../../../lib/json-ld";
 import LocationSinglePage from "../../../location-(single)";
 import type { Metadata } from "next";
@@ -73,6 +73,8 @@ export default async function LocationSingle({ params }: { params: { slug: strin
       />
       <LocationSinglePage
         locationData={locationData?.acf}
+        bodyContent={locationData?.content?.rendered ?? null}
+        featuredImageUrl={getFeaturedImageUrl(locationData)}
       />
     </>
   );

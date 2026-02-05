@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar8 } from "./components/Navbar8";
+import { Navbar8 } from "../components/Navbar8";
 import { Header64 } from "./components/Header64";
 import { Faq4 } from "./components/Faq4";
 import { Cta31 } from "./components/Cta31";

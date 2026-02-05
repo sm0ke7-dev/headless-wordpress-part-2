@@ -12,6 +12,17 @@ export interface WpPost {
   id: number;
   slug: string;
   title: { rendered: string };
+  content?: { rendered: string };
+  _embedded?: {
+    "wp:featuredmedia"?: Array<{
+      media_details?: {
+        sizes?: {
+          large?: { source_url: string };
+          full?: { source_url: string };
+        };
+      };
+    }>;
+  };
   acf: WpAcf;
 }
 
@@ -25,7 +36,7 @@ export interface WpPage extends WpPost {
 
 async function wpFetch<T>(endpoint: string): Promise<T> {
   const res = await fetch(`${WP_URL}/wp-json/wp/v2/${endpoint}`, {
-    next: { revalidate: 60 }, // ISR – stale content refreshes every 60 s
+    next: { revalidate: 5 }, // ISR – stale content refreshes every 5 s
   });
 
   if (!res.ok) {
@@ -40,7 +51,7 @@ async function wpFetch<T>(endpoint: string): Promise<T> {
 // ---------------------------------------------------------------------------
 
 export const getPage = (slug: string) =>
-  wpFetch<WpPage[]>(`pages?slug=${slug}`).then((pages) => pages[0] ?? null);
+  wpFetch<WpPage[]>(`pages?slug=${slug}&_embed`).then((pages) => pages[0] ?? null);
 
 // ---------------------------------------------------------------------------
 // Services
@@ -49,7 +60,7 @@ export const getPage = (slug: string) =>
 export const getServices = () => wpFetch<WpPost[]>("services");
 
 export const getService = (slug: string) =>
-  wpFetch<WpPost[]>(`services?slug=${slug}`).then((posts) => posts[0] ?? null);
+  wpFetch<WpPost[]>(`services?slug=${slug}&_embed`).then((posts) => posts[0] ?? null);
 
 // ---------------------------------------------------------------------------
 // Locations
@@ -58,7 +69,7 @@ export const getService = (slug: string) =>
 export const getLocations = () => wpFetch<WpPost[]>("locations");
 
 export const getLocation = (slug: string) =>
-  wpFetch<WpPost[]>(`locations?slug=${slug}`).then(
+  wpFetch<WpPost[]>(`locations?slug=${slug}&_embed`).then(
     (posts) => posts[0] ?? null
   );
 
@@ -73,3 +84,15 @@ export const getTestimonials = () => wpFetch<WpPost[]>("testimonials");
 // ---------------------------------------------------------------------------
 
 export const getTeamMembers = () => wpFetch<WpPost[]>("team-members");
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+export function getFeaturedImageUrl(post: WpPost | null): string | null {
+  return (
+    post?._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url ??
+    post?._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full?.source_url ??
+    null
+  );
+}

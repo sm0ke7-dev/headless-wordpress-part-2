@@ -98,12 +98,3 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
     }))
   };
 }
-
-export function renderJsonLd(data: any) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
-}

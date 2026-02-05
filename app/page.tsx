@@ -1,4 +1,4 @@
-import { getPage, getTestimonials, getTeamMembers } from "../lib/wp";
+import { getPage, getTestimonials, getTeamMembers, getFeaturedImageUrl } from "../lib/wp";
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../lib/json-ld";
 import HomePage from "../home";
 import type { Metadata } from "next";
@@ -56,6 +56,8 @@ export default async function Home() {
         pageData={pageData}
         testimonials={testimonials}
         teamMembers={teamMembers}
+        featuredImageUrl={getFeaturedImageUrl(pageData)}
+        bodyContent={pageData?.content?.rendered ?? null}
       />
     </>
   );

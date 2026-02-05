@@ -1,4 +1,4 @@
-import { getService, getServices } from "../../../lib/wp";
+import { getService, getServices, getFeaturedImageUrl } from "../../../lib/wp";
 import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "../../../lib/json-ld";
 import ServiceSinglePage from "../../../service-(single)";
 import type { Metadata } from "next";
@@ -72,6 +72,8 @@ export default async function ServiceSingle({ params }: { params: { slug: string
       />
       <ServiceSinglePage
         serviceData={serviceData?.acf}
+        bodyContent={serviceData?.content?.rendered ?? null}
+        featuredImageUrl={getFeaturedImageUrl(serviceData)}
       />
     </>
   );
