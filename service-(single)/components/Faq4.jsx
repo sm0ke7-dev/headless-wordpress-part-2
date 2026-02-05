@@ -42,6 +42,7 @@ export function Faq4({ data }) {
   const footerHeading = data?.faq_footer_heading || "More questions?";
   const footerDescription = data?.faq_footer_description || "Reach out to our team directly.";
   const footerButtonText = data?.faq_footer_button_text || "Contact";
+  const footerButtonUrl = data?.faq_footer_button_url || "#";
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
@@ -84,8 +85,8 @@ export function Faq4({ data }) {
           </h4>
           <p className="md:text-md">{footerDescription}</p>
           <div className="mt-6 md:mt-8">
-            <Button title={footerButtonText} variant="secondary">
-              {footerButtonText}
+            <Button asChild title={footerButtonText} variant="secondary">
+              <a href={footerButtonUrl}>{footerButtonText}</a>
             </Button>
           </div>
         </div>

@@ -90,19 +90,21 @@ export function Layout525({ data }) {
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
                   {services[0].primary_button_text && (
-                    <Button title={services[0].primary_button_text} variant="secondary-alt">
-                      {services[0].primary_button_text}
+                    <Button asChild title={services[0].primary_button_text} variant="secondary-alt">
+                      <a href={services[0].link || "#"}>{services[0].primary_button_text}</a>
                     </Button>
                   )}
                   {services[0].secondary_button_text && (
-                    <Button
-                      title={services[0].secondary_button_text}
-                      variant="link-alt"
-                      size="link"
-                      iconRight={<RxChevronRight />}
-                    >
-                      {services[0].secondary_button_text}
-                    </Button>
+                    <a href={services[0].link || "#"}>
+                      <Button
+                        title={services[0].secondary_button_text}
+                        variant="link-alt"
+                        size="link"
+                        iconRight={<RxChevronRight />}
+                      >
+                        {services[0].secondary_button_text}
+                      </Button>
+                    </a>
                   )}
                 </div>
               </div>
@@ -140,14 +142,16 @@ export function Layout525({ data }) {
                     </div>
                     {services[1].button_text && (
                       <div className="mt-5 flex items-center md:mt-6">
-                        <Button
-                          title={services[1].button_text}
-                          variant="link-alt"
-                          size="link"
-                          iconRight={<RxChevronRight />}
-                        >
-                          {services[1].button_text}
-                        </Button>
+                        <a href={services[1].link || "#"}>
+                          <Button
+                            title={services[1].button_text}
+                            variant="link-alt"
+                            size="link"
+                            iconRight={<RxChevronRight />}
+                          >
+                            {services[1].button_text}
+                          </Button>
+                        </a>
                       </div>
                     )}
                   </div>
@@ -183,14 +187,16 @@ export function Layout525({ data }) {
                     </div>
                     {services[2].button_text && (
                       <div className="mt-5 flex items-center md:mt-6">
-                        <Button
-                          title={services[2].button_text}
-                          variant="link-alt"
-                          size="link"
-                          iconRight={<RxChevronRight />}
-                        >
-                          {services[2].button_text}
-                        </Button>
+                        <a href={services[2].link || "#"}>
+                          <Button
+                            title={services[2].button_text}
+                            variant="link-alt"
+                            size="link"
+                            iconRight={<RxChevronRight />}
+                          >
+                            {services[2].button_text}
+                          </Button>
+                        </a>
                       </div>
                     )}
                   </div>
@@ -227,19 +233,21 @@ export function Layout525({ data }) {
                   </div>
                   <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
                     {services[3].primary_button_text && (
-                      <Button title={services[3].primary_button_text} variant="secondary-alt">
-                        {services[3].primary_button_text}
+                      <Button asChild title={services[3].primary_button_text} variant="secondary-alt">
+                        <a href={services[3].link || "#"}>{services[3].primary_button_text}</a>
                       </Button>
                     )}
                     {services[3].secondary_button_text && (
-                      <Button
-                        title={services[3].secondary_button_text}
-                        variant="link-alt"
-                        size="link"
-                        iconRight={<RxChevronRight />}
-                      >
-                        {services[3].secondary_button_text}
-                      </Button>
+                      <a href={services[3].link || "#"}>
+                        <Button
+                          title={services[3].secondary_button_text}
+                          variant="link-alt"
+                          size="link"
+                          iconRight={<RxChevronRight />}
+                        >
+                          {services[3].secondary_button_text}
+                        </Button>
+                      </a>
                     )}
                   </div>
                 </div>

@@ -13,7 +13,7 @@ export function Cta31({ data }) {
   const image = data?.cta_image || { url: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg", alt: "CTA image" };
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="relume" className="bg-brand-primary px-[5%] py-16 text-white md:py-24 lg:py-28">
       <div className="container flex flex-col items-center">
         <div className="mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
           <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">

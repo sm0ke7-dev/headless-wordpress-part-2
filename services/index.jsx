@@ -5,9 +5,9 @@ import { Layout423 } from "./components/Layout423";
 import { Layout525 } from "./components/Layout525";
 import { Testimonial22 } from "./components/Testimonial22";
 import { Cta31 } from "./components/Cta31";
-import { Footer9 } from "./components/Footer9";
+import { Footer9 } from "../components/Footer9";
 
-export default function Page({ pageData, services }) {
+export default function Page({ pageData, services, globalSettings }) {
   return (
     <div>
       <Navbar8 />
@@ -16,7 +16,7 @@ export default function Page({ pageData, services }) {
       <Layout525 data={pageData} services={services} />
       <Testimonial22 data={pageData} />
       <Cta31 data={pageData} />
-      <Footer9 />
+      <Footer9 data={globalSettings} />
     </div>
   );
 }

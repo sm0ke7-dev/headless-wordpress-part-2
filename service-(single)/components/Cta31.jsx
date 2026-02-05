@@ -8,6 +8,8 @@ export function Cta31({ data }) {
   const description = data?.cta_description || "No waiting. No guessing. Just answers and a plan that works.";
   const primaryButtonText = data?.cta_primary_button_text || "Book";
   const secondaryButtonText = data?.cta_secondary_button_text || "Call";
+  const primaryButtonUrl = data?.cta_primary_button_url || "#";
+  const secondaryButtonUrl = data?.cta_secondary_button_url || "#";
   const image = data?.cta_image || { url: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg", alt: "CTA image" };
 
   return (
@@ -21,9 +23,11 @@ export function Cta31({ data }) {
             {description}
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
-            <Button title={primaryButtonText}>{primaryButtonText}</Button>
-            <Button title={secondaryButtonText} variant="secondary">
-              {secondaryButtonText}
+            <Button asChild title={primaryButtonText}>
+              <a href={primaryButtonUrl}>{primaryButtonText}</a>
+            </Button>
+            <Button asChild title={secondaryButtonText} variant="secondary">
+              <a href={secondaryButtonUrl}>{secondaryButtonText}</a>
             </Button>
           </div>
         </div>

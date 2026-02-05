@@ -17,6 +17,9 @@ export function Layout503({ data }) {
   const primaryButtonText = data?.facility_primary_button_text || "Learn";
   const secondaryButtonText = data?.facility_secondary_button_text || "→";
 
+  const primaryButtonUrl = data?.facility_primary_button_url || "#";
+  const secondaryButtonUrl = data?.facility_secondary_button_url || "#";
+
   const defaultTabs = [
     {
       value: "tab-one",
@@ -65,17 +68,19 @@ export function Layout503({ data }) {
               {description}
             </p>
             <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
-              <Button title={primaryButtonText} variant="secondary">
-                {primaryButtonText}
+              <Button asChild title={primaryButtonText} variant="secondary">
+                <a href={primaryButtonUrl}>{primaryButtonText}</a>
               </Button>
-              <Button
-                title={secondaryButtonText}
-                variant="link"
-                size="link"
-                iconRight={<RxChevronRight />}
-              >
-                {secondaryButtonText}
-              </Button>
+              <a href={secondaryButtonUrl}>
+                <Button
+                  title={secondaryButtonText}
+                  variant="link"
+                  size="link"
+                  iconRight={<RxChevronRight />}
+                >
+                  {secondaryButtonText}
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -107,17 +112,19 @@ export function Layout503({ data }) {
                     {tab.description}
                   </p>
                   <div className="mt-6 flex items-center gap-x-4 md:mt-8">
-                    <Button title={tab.primary_button_text} variant="secondary">
-                      {tab.primary_button_text}
+                    <Button asChild title={tab.primary_button_text} variant="secondary">
+                      <a href={tab.primary_button_url || "#"}>{tab.primary_button_text}</a>
                     </Button>
-                    <Button
-                      title={tab.secondary_button_text}
-                      variant="link"
-                      size="link"
-                      iconRight={<RxChevronRight />}
-                    >
-                      {tab.secondary_button_text}
-                    </Button>
+                    <a href={tab.secondary_button_url || "#"}>
+                      <Button
+                        title={tab.secondary_button_text}
+                        variant="link"
+                        size="link"
+                        iconRight={<RxChevronRight />}
+                      >
+                        {tab.secondary_button_text}
+                      </Button>
+                    </a>
                   </div>
                 </div>
                 <div className="aspect-square">

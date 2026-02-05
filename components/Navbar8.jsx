@@ -42,7 +42,7 @@ export function Navbar8() {
   return (
     <section
       id="relume"
-      className="relative z-[999] flex min-h-16 w-full items-center border-b border-border-primary bg-background-primary px-[5%] md:min-h-18"
+      className="relative z-[999] flex min-h-16 w-full items-center border-b border-white/20 bg-brand-primary px-[5%] text-white md:min-h-18"
     >
       <div className="mx-auto flex size-full max-w-full items-center justify-between">
         <a href="/">
@@ -51,7 +51,7 @@ export function Navbar8() {
             alt="Logo image"
           />
         </a>
-        <div className="absolute hidden h-screen overflow-auto border-b border-border-primary bg-background-primary px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-6 lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-between lg:border-none lg:bg-none lg:px-0 lg:pt-0">
+        <div className="absolute hidden h-screen overflow-auto border-b border-border-primary bg-brand-primary px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-6 lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-between lg:border-none lg:bg-none lg:px-0 lg:pt-0">
           <div className="flex flex-col items-center lg:flex-row">
             <a
               href="/about-us"
@@ -109,7 +109,7 @@ export function Navbar8() {
                   initial="close"
                   exit="close"
                   transition={{ duration: 0.2 }}
-                  className="bottom-auto left-0 top-full w-full min-w-full max-w-full overflow-hidden bg-background-primary lg:absolute lg:w-screen lg:border-b lg:border-border-primary lg:px-[5%] lg:[--height-close:auto]"
+                  className="bottom-auto left-0 top-full w-full min-w-full max-w-full overflow-hidden bg-brand-primary lg:absolute lg:w-screen lg:border-b lg:border-border-primary lg:px-[5%] lg:[--height-close:auto]"
                 >
                   <div className="mx-auto flex size-full max-w-full items-center justify-between">
                     <div className="flex w-full flex-col lg:flex-row">
@@ -395,7 +395,7 @@ export function Navbar8() {
           onClick={useActive.toggleMobileMenu}
         >
           <motion.span
-            className="my-[3px] h-0.5 w-6 bg-black"
+            className="my-[3px] h-0.5 w-6 bg-white"
             animate={useActive.animateMobileMenuButtonSpan}
             variants={{
               open: { translateY: 8, transition: { delay: 0.1 } },
@@ -408,7 +408,7 @@ export function Navbar8() {
             }}
           />
           <motion.span
-            className="my-[3px] h-0.5 w-6 bg-black"
+            className="my-[3px] h-0.5 w-6 bg-white"
             animate={useActive.animateMobileMenu}
             variants={{
               open: { width: 0, transition: { duration: 0.1 } },
@@ -419,7 +419,7 @@ export function Navbar8() {
             }}
           />
           <motion.span
-            className="my-[3px] h-0.5 w-6 bg-black"
+            className="my-[3px] h-0.5 w-6 bg-white"
             animate={useActive.animateMobileMenuButtonSpan}
             variants={{
               open: { translateY: -8, transition: { delay: 0.1 } },
@@ -448,7 +448,7 @@ export function Navbar8() {
             initial="close"
             exit="close"
             transition={{ duration: 0.4 }}
-            className="absolute left-0 right-0 top-0 block h-dvh overflow-auto border-b border-border-primary bg-background-primary px-[5%] pb-8 pt-4"
+            className="absolute left-0 right-0 top-0 block h-dvh overflow-auto border-b border-border-primary bg-brand-primary px-[5%] pb-8 pt-4"
           >
             <div className="flex flex-col">
               <a href="/about-us" className="block py-3 text-md">
@@ -495,7 +495,7 @@ export function Navbar8() {
                     initial="close"
                     exit="close"
                     transition={{ duration: 0.2 }}
-                    className="bottom-auto left-0 top-full w-full min-w-full max-w-full overflow-hidden bg-background-primary lg:absolute lg:w-screen lg:border-b lg:border-border-primary lg:px-[5%] lg:[--height-close:auto]"
+                    className="bottom-auto left-0 top-full w-full min-w-full max-w-full overflow-hidden bg-brand-primary lg:absolute lg:w-screen lg:border-b lg:border-border-primary lg:px-[5%] lg:[--height-close:auto]"
                   >
                     <div className="mx-auto flex size-full max-w-full items-center justify-between">
                       <div className="flex w-full flex-col lg:flex-row">

@@ -86,6 +86,23 @@ export const getTestimonials = () => wpFetch<WpPost[]>("testimonials");
 export const getTeamMembers = () => wpFetch<WpPost[]>("team-members");
 
 // ---------------------------------------------------------------------------
+// ACF Options Pages
+// ---------------------------------------------------------------------------
+
+export const getGlobalSettings = async (): Promise<WpAcf> => {
+  const res = await fetch(`${WP_URL}/wp-json/acf/v3/options/site-settings`, {
+    next: { revalidate: 5 },
+  });
+
+  if (!res.ok) {
+    console.warn("Global settings fetch failed, using empty object");
+    return {};
+  }
+
+  return res.json();
+};
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 

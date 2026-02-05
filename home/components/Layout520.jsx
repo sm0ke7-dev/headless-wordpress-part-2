@@ -37,7 +37,7 @@ export function Layout520({ data }) {
   const features = acfFeatures.length > 0 ? acfFeatures : defaultFeatures;
 
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section id="relume" className="bg-brand-primary px-[5%] py-16 text-white md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-lg text-center">
@@ -76,13 +76,15 @@ export function Layout520({ data }) {
                   {feature.description || feature.content}
                 </p>
                 <div className="mt-5 flex items-center md:mt-6">
-                  <Button
-                    variant="link-alt"
-                    size="link"
-                    iconRight={<RxChevronRight />}
-                  >
-                    Learn more
-                  </Button>
+                  <a href={feature.link || "#"}>
+                    <Button
+                      variant="link-alt"
+                      size="link"
+                      iconRight={<RxChevronRight />}
+                    >
+                      Learn more
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>

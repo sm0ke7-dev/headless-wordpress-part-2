@@ -73,17 +73,19 @@ export function Layout356({ data }) {
                             {step.description}
                           </p>
                           <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-                            <Button title={step.primary_button_text} variant="secondary">
-                              {step.primary_button_text}
+                            <Button asChild title={step.primary_button_text} variant="secondary">
+                              <a href={step.primary_button_url || "#"}>{step.primary_button_text}</a>
                             </Button>
-                            <Button
-                              title={step.secondary_button_text}
-                              variant="link"
-                              size="link"
-                              iconRight={<RxChevronRight />}
-                            >
-                              {step.secondary_button_text}
-                            </Button>
+                            <a href={step.secondary_button_url || "#"}>
+                              <Button
+                                title={step.secondary_button_text}
+                                variant="link"
+                                size="link"
+                                iconRight={<RxChevronRight />}
+                              >
+                                {step.secondary_button_text}
+                              </Button>
+                            </a>
                           </div>
                         </div>
                         <div className="relative">

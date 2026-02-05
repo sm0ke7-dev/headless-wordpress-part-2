@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
+/* Tailwind v4 equivalent of v3 container: { center: true } from Relume preset */
+@utility container {
+  margin-inline: auto;
+}
+
 /* WordPress body content — styles for content rendered via dangerouslySetInnerHTML */
 .wp-content h1 {
   font-size: clamp(2rem, 5vw, 4.5rem);

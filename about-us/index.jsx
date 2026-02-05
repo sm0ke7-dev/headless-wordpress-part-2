@@ -7,9 +7,9 @@ import { Team5 } from "./components/Team5";
 import { Stats26 } from "./components/Stats26";
 import { Testimonial22 } from "./components/Testimonial22";
 import { Cta31 } from "./components/Cta31";
-import { Footer9 } from "./components/Footer9";
+import { Footer9 } from "../components/Footer9";
 
-export default function Page({ pageData, testimonials, teamMembers }) {
+export default function Page({ pageData, testimonials, teamMembers, globalSettings }) {
   return (
     <div>
       <Navbar8 />
@@ -20,7 +20,7 @@ export default function Page({ pageData, testimonials, teamMembers }) {
       <Stats26 data={pageData} />
       <Testimonial22 testimonials={testimonials} data={pageData} />
       <Cta31 data={pageData} />
-      <Footer9 />
+      <Footer9 data={globalSettings} />
     </div>
   );
 }

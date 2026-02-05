@@ -1042,6 +1042,34 @@
         "character_limit": ""
       },
       {
+        "key": "field_cta_primary_button_url",
+        "label": "CTA Primary Button URL",
+        "name": "cta_primary_button_url",
+        "type": "url",
+        "instructions": "URL/link for the primary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "https://example.com/book",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cta_secondary_button_url",
+        "label": "CTA Secondary Button URL",
+        "name": "cta_secondary_button_url",
+        "type": "url",
+        "instructions": "URL/link for the secondary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "tel:+15551234567",
+        "prepend": "",
+        "append": ""
+      },
+      {
         "key": "field_cta_image",
         "label": "CTA Image",
         "name": "cta_image",

@@ -1,4 +1,4 @@
-import { getPage, getLocations } from "../../lib/wp";
+import { getPage, getLocations, getGlobalSettings } from "../../lib/wp";
 import { generateBreadcrumbSchema } from "../../lib/json-ld";
 import LocationsPage from "../../locations";
 import type { Metadata } from "next";
@@ -8,31 +8,32 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
   return {
-    title: pageData?.acf?.seo_title || "Our Locations | Physical Therapy Clinics",
-    description: pageData?.acf?.seo_description || "Find a physical therapy clinic near you. Modern facilities with experienced clinicians ready to help you recover.",
+    title: (pageData?.acf?.seo_title as string) || "Our Locations | Physical Therapy Clinics",
+    description: (pageData?.acf?.seo_description as string) || "Find a physical therapy clinic near you. Modern facilities with experienced clinicians ready to help you recover.",
     alternates: {
       canonical: `${baseUrl}/locations`,
     },
     openGraph: {
-      title: pageData?.acf?.seo_title || "Our Locations | Physical Therapy Clinics",
-      description: pageData?.acf?.seo_description || "Find a physical therapy clinic near you. Modern facilities with experienced clinicians ready to help you recover.",
-      images: pageData?.acf?.seo_image?.url ? [{ url: pageData.acf.seo_image.url }] : [],
+      title: (pageData?.acf?.seo_title as string) || "Our Locations | Physical Therapy Clinics",
+      description: (pageData?.acf?.seo_description as string) || "Find a physical therapy clinic near you. Modern facilities with experienced clinicians ready to help you recover.",
+      images: (pageData?.acf?.seo_image as { url: string })?.url ? [{ url: (pageData.acf.seo_image as { url: string }).url }] : [],
       type: "website",
       url: `${baseUrl}/locations`,
     },
     twitter: {
       card: "summary_large_image",
-      title: pageData?.acf?.seo_title || "Our Locations | Physical Therapy Clinics",
-      description: pageData?.acf?.seo_description || "Find a physical therapy clinic near you. Modern facilities with experienced clinicians ready to help you recover.",
-      images: pageData?.acf?.seo_image?.url ? [pageData.acf.seo_image.url] : [],
+      title: (pageData?.acf?.seo_title as string) || "Our Locations | Physical Therapy Clinics",
+      description: (pageData?.acf?.seo_description as string) || "Find a physical therapy clinic near you. Modern facilities with experienced clinicians ready to help you recover.",
+      images: (pageData?.acf?.seo_image as { url: string })?.url ? [(pageData.acf.seo_image as { url: string }).url] : [],
     },
   };
 }
 
 export default async function Locations() {
-  const [pageData, locations] = await Promise.all([
+  const [pageData, locations, globalSettings] = await Promise.all([
     getPage("locations"),
     getLocations(),
+    getGlobalSettings(),
   ]);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -49,6 +50,7 @@ export default async function Locations() {
       <LocationsPage
         pageData={pageData?.acf}
         locations={locations}
+        globalSettings={globalSettings}
       />
     </>
   );

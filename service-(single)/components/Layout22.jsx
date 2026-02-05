@@ -10,6 +10,8 @@ export function Layout22({ data }) {
   const description = data?.service_approach_description || "We measure everything. Range of motion, strength, function. You'll know exactly where you stand and where you're headed. No vague promises, just clear progress.";
   const primaryButtonText = data?.service_approach_primary_button_text || "Learn";
   const secondaryButtonText = data?.service_approach_secondary_button_text || "More";
+  const primaryButtonUrl = data?.service_approach_primary_button_url || "#";
+  const secondaryButtonUrl = data?.service_approach_secondary_button_url || "#";
   const image = data?.service_approach_image || { url: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg", alt: "Service approach image" };
 
   return (
@@ -31,17 +33,19 @@ export function Layout22({ data }) {
               {description}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              <Button title={primaryButtonText} variant="secondary">
-                {primaryButtonText}
+              <Button asChild title={primaryButtonText} variant="secondary">
+                <a href={primaryButtonUrl}>{primaryButtonText}</a>
               </Button>
-              <Button
-                title={secondaryButtonText}
-                variant="link"
-                size="link"
-                iconRight={<RxChevronRight />}
-              >
-                {secondaryButtonText}
-              </Button>
+              <a href={secondaryButtonUrl}>
+                <Button
+                  title={secondaryButtonText}
+                  variant="link"
+                  size="link"
+                  iconRight={<RxChevronRight />}
+                >
+                  {secondaryButtonText}
+                </Button>
+              </a>
             </div>
           </div>
           <div>

@@ -184,6 +184,88 @@ export function Component({ data }) {
 }
 ```
 
+## ACF Options Pages (Global/Shared Content)
+
+### When to Use
+Site-wide content that appears on multiple pages (footer, navbar settings, social links, etc.). Avoids duplicating fields across every page.
+
+### Implementation Pattern
+
+**1. Create ACF Field Group with Options Page Location Rule:**
+```json
+{
+  "key": "group_global_settings",
+  "title": "Global Settings",
+  "fields": [...],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "site-settings"
+      }
+    ]
+  ]
+}
+```
+
+**2. Add Fetch Helper (`lib/wp.ts`):**
+```typescript
+export const getGlobalSettings = async (): Promise<WpAcf> => {
+  const res = await fetch(`${WP_URL}/wp-json/acf/v3/options/site-settings`, {
+    next: { revalidate: 5 },
+  });
+
+  if (!res.ok) {
+    console.warn("Global settings fetch failed, using empty object");
+    return {};
+  }
+
+  return res.json();
+};
+```
+**Note:** Different endpoint from pages (`/acf/v3/options/{page-slug}` vs `/wp/v2/pages`)
+
+**3. Fetch in `page.tsx` and Pass Down:**
+```typescript
+const [pageData, globalSettings] = await Promise.all([
+  getPage("home"),
+  getGlobalSettings(),
+]);
+
+return <HomePage pageData={pageData} globalSettings={globalSettings} />
+```
+
+**4. Create Shared Component:**
+```jsx
+// components/Footer9.jsx
+export function Footer9({ data }) {
+  const logo = data?.footer_logo || { url: "fallback.svg", alt: "Logo" };
+  // ... use data from Options Page
+}
+```
+
+**5. All Page index.jsx Files Import and Pass Data:**
+```jsx
+import { Footer9 } from "../components/Footer9";
+
+export default function Page({ pageData, globalSettings }) {
+  return (
+    <div>
+      {/* page components */}
+      <Footer9 data={globalSettings} />
+    </div>
+  );
+}
+```
+
+### Completed: Footer9 Consolidation
+- **File:** `components/Footer9.jsx` (shared across all 6 pages)
+- **ACF Import:** `acf-import-global-settings.json`
+- **Fields:** Logo, newsletter text, 5 service links, 5 location links, 5 social URLs, 3 legal links, copyright
+- **Pages wired:** home, about-us, services, service-single, locations, location-single
+- **WordPress Path:** Options → Site Settings
+
 ## Common Field Types
 
 ### Text Field
@@ -305,6 +387,8 @@ export function Component({ data }) {
 5. **Adding new UI elements** instead of just wiring data
 6. **Assuming link destinations** instead of asking or looking them up
 7. **Not preserving fallback/default values** from original components
+8. **Tailwind v4 silently drops v3 config options** — The Relume preset uses `container: { center: true }` which is v3 syntax. With `@tailwindcss/postcss` v4, this is completely ignored with no warning. Fix: add `@utility container { margin-inline: auto; }` in `globals.css` after the `@config` line. Diagnosis: check generated CSS (`.next/static/**/*.css`) for `.container` — if it lacks `margin-inline: auto`, the centering is broken.
+9. **WpAcf typed as `{ [key: string]: unknown }`** — All ACF field accesses return `unknown`. Next.js `Metadata` title/description require `string | TemplateString`. The `|| "fallback"` pattern does NOT narrow `unknown` to `string`. Fix: cast with `as string` e.g. `(pageData?.acf?.seo_title as string) || "Fallback"`. Same for image fields: cast as `{ url: string }` before accessing `.url`.
 
 ## Testing Checklist
 

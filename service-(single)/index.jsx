@@ -7,9 +7,9 @@ import { Layout356 } from "./components/Layout356";
 import { Testimonial22 } from "./components/Testimonial22";
 import { Cta31 } from "./components/Cta31";
 import { Faq4 } from "./components/Faq4";
-import { Footer9 } from "./components/Footer9";
+import { Footer9 } from "../components/Footer9";
 
-export default function Page({ serviceData, bodyContent, featuredImageUrl }) {
+export default function Page({ serviceData, bodyContent, featuredImageUrl, globalSettings }) {
   return (
     <div>
       <Navbar8 />
@@ -25,7 +25,7 @@ export default function Page({ serviceData, bodyContent, featuredImageUrl }) {
       <Testimonial22 data={serviceData} />
       <Cta31 data={serviceData} />
       <Faq4 data={serviceData} />
-      <Footer9 />
+      <Footer9 data={globalSettings} />
     </div>
   );
 }

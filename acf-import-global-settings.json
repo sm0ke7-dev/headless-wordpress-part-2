@@ -1,0 +1,445 @@
+{
+  "key": "group_global_site_settings",
+  "title": "Global Site Settings",
+  "fields": [
+    {
+      "key": "field_footer_logo",
+      "label": "Footer Logo",
+      "name": "footer_logo",
+      "type": "image",
+      "instructions": "Logo image for the footer",
+      "required": 0,
+      "return_format": "array",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_footer_newsletter_heading",
+      "label": "Newsletter Heading",
+      "name": "footer_newsletter_heading",
+      "type": "text",
+      "instructions": "Heading/description for newsletter signup section",
+      "required": 0,
+      "default_value": "Get rehab insights and recovery tips delivered monthly.",
+      "placeholder": "Get rehab insights and recovery tips delivered monthly."
+    },
+    {
+      "key": "field_footer_newsletter_disclaimer",
+      "label": "Newsletter Disclaimer",
+      "name": "footer_newsletter_disclaimer",
+      "type": "text",
+      "instructions": "Small text under the newsletter form",
+      "required": 0,
+      "default_value": "We respect your privacy and only send what matters.",
+      "placeholder": "We respect your privacy and only send what matters."
+    },
+    {
+      "key": "field_footer_service_link_1",
+      "label": "Service Link 1",
+      "name": "footer_service_link_1",
+      "type": "group",
+      "instructions": "First service link in footer",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_service_link_1_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Physical therapy"
+        },
+        {
+          "key": "field_footer_service_link_1_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "https://example.com/services/physical-therapy"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_service_link_2",
+      "label": "Service Link 2",
+      "name": "footer_service_link_2",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_service_link_2_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Sports medicine"
+        },
+        {
+          "key": "field_footer_service_link_2_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/services/sports-medicine"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_service_link_3",
+      "label": "Service Link 3",
+      "name": "footer_service_link_3",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_service_link_3_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Post-op rehab"
+        },
+        {
+          "key": "field_footer_service_link_3_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/services/post-op-rehab"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_service_link_4",
+      "label": "Service Link 4",
+      "name": "footer_service_link_4",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_service_link_4_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Pain management"
+        },
+        {
+          "key": "field_footer_service_link_4_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/services/pain-management"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_service_link_5",
+      "label": "Service Link 5",
+      "name": "footer_service_link_5",
+      "type": "group",
+      "instructions": "Additional service or 'All Services' link",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_service_link_5_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "All services"
+        },
+        {
+          "key": "field_footer_service_link_5_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/services"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_location_link_1",
+      "label": "Location Link 1",
+      "name": "footer_location_link_1",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_location_link_1_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "San Jose"
+        },
+        {
+          "key": "field_footer_location_link_1_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/locations/san-jose"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_location_link_2",
+      "label": "Location Link 2",
+      "name": "footer_location_link_2",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_location_link_2_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Sacramento"
+        },
+        {
+          "key": "field_footer_location_link_2_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/locations/sacramento"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_location_link_3",
+      "label": "Location Link 3",
+      "name": "footer_location_link_3",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_location_link_3_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Long Beach"
+        },
+        {
+          "key": "field_footer_location_link_3_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/locations/long-beach"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_location_link_4",
+      "label": "Location Link 4",
+      "name": "footer_location_link_4",
+      "type": "group",
+      "instructions": "Additional link (e.g., 'All locations' or 'Contact us')",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_location_link_4_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Contact us"
+        },
+        {
+          "key": "field_footer_location_link_4_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/contact"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_location_link_5",
+      "label": "Location Link 5",
+      "name": "footer_location_link_5",
+      "type": "group",
+      "instructions": "Additional link (e.g., 'About us')",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_location_link_5_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "About us"
+        },
+        {
+          "key": "field_footer_location_link_5_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/about-us"
+        }
+      ]
+    },
+    {
+      "key": "field_social_facebook_url",
+      "label": "Facebook URL",
+      "name": "social_facebook_url",
+      "type": "url",
+      "instructions": "Full URL to Facebook page",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://facebook.com/yourpage"
+    },
+    {
+      "key": "field_social_instagram_url",
+      "label": "Instagram URL",
+      "name": "social_instagram_url",
+      "type": "url",
+      "instructions": "Full URL to Instagram profile",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://instagram.com/yourprofile"
+    },
+    {
+      "key": "field_social_twitter_url",
+      "label": "X (Twitter) URL",
+      "name": "social_twitter_url",
+      "type": "url",
+      "instructions": "Full URL to X/Twitter profile",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://x.com/yourprofile"
+    },
+    {
+      "key": "field_social_linkedin_url",
+      "label": "LinkedIn URL",
+      "name": "social_linkedin_url",
+      "type": "url",
+      "instructions": "Full URL to LinkedIn company page",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://linkedin.com/company/yourcompany"
+    },
+    {
+      "key": "field_social_youtube_url",
+      "label": "YouTube URL",
+      "name": "social_youtube_url",
+      "type": "url",
+      "instructions": "Full URL to YouTube channel",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://youtube.com/@yourchannel"
+    },
+    {
+      "key": "field_footer_legal_link_1",
+      "label": "Legal Link 1",
+      "name": "footer_legal_link_1",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_legal_link_1_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Terms of Service"
+        },
+        {
+          "key": "field_footer_legal_link_1_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/terms"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_legal_link_2",
+      "label": "Legal Link 2",
+      "name": "footer_legal_link_2",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_legal_link_2_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Cookies Settings"
+        },
+        {
+          "key": "field_footer_legal_link_2_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/cookies"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_legal_link_3",
+      "label": "Legal Link 3",
+      "name": "footer_legal_link_3",
+      "type": "group",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_footer_legal_link_3_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "required": 0,
+          "placeholder": "Privacy Policy"
+        },
+        {
+          "key": "field_footer_legal_link_3_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url",
+          "required": 0,
+          "placeholder": "https://example.com/privacy"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_copyright_text",
+      "label": "Copyright Text",
+      "name": "footer_copyright_text",
+      "type": "text",
+      "instructions": "Copyright text (year will be added automatically). Leave empty to use default.",
+      "required": 0,
+      "default_value": "Physio Physical Therapy. All rights reserved.",
+      "placeholder": "Physio Physical Therapy. All rights reserved."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "site-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Global settings for footer, social media, and site-wide content"
+}

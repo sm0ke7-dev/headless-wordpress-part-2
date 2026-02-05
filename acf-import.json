@@ -124,6 +124,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_feature_1_link",
+            "label": "Learn More Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this feature card's 'Learn more' button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -205,6 +219,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_feature_2_link",
+            "label": "Learn More Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this feature card's 'Learn more' button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -286,6 +314,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_feature_3_link",
+            "label": "Learn More Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this feature card's 'Learn more' button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -1093,6 +1135,105 @@
         "prepend": "",
         "append": "",
         "character_limit": ""
+      },
+      {
+        "key": "field_cta_heading",
+        "label": "CTA Heading",
+        "name": "cta_heading",
+        "type": "text",
+        "instructions": "Main heading in the bottom CTA section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Ready to move without pain?",
+        "prepend": "",
+        "append": "",
+        "character_limit": ""
+      },
+      {
+        "key": "field_cta_description",
+        "label": "CTA Description",
+        "name": "cta_description",
+        "type": "textarea",
+        "instructions": "Short body copy below the CTA heading.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Book your evaluation today. We'll assess what's wrong and show you exactly how to fix it.",
+        "rows": 3
+      },
+      {
+        "key": "field_cta_primary_button_text",
+        "label": "CTA Primary Button",
+        "name": "cta_primary_button_text",
+        "type": "text",
+        "instructions": "Label on the main CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Book an evaluation",
+        "prepend": "",
+        "append": "",
+        "character_limit": ""
+      },
+      {
+        "key": "field_cta_secondary_button_text",
+        "label": "CTA Secondary Button",
+        "name": "cta_secondary_button_text",
+        "type": "text",
+        "instructions": "Label on the secondary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Call now",
+        "prepend": "",
+        "append": "",
+        "character_limit": ""
+      },
+      {
+        "key": "field_cta_primary_button_url",
+        "label": "CTA Primary Button URL",
+        "name": "cta_primary_button_url",
+        "type": "url",
+        "instructions": "URL/link for the primary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "https://example.com/book",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cta_secondary_button_url",
+        "label": "CTA Secondary Button URL",
+        "name": "cta_secondary_button_url",
+        "type": "url",
+        "instructions": "URL/link for the secondary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "tel:+15551234567",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cta_image",
+        "label": "CTA Image",
+        "name": "cta_image",
+        "type": "image",
+        "instructions": "Image displayed below the CTA buttons.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "return_format": "array",
+        "preview_size": "medium",
+        "uploader": "wp_media_library"
       }
     ],
     "location": [

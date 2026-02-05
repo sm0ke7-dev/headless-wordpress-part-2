@@ -552,6 +552,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_service_1_link",
+            "label": "Service Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this service's detail page. Content team sets this in WP.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "/services/",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -650,6 +664,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_service_2_link",
+            "label": "Service Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this service's detail page. Content team sets this in WP.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "/services/",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -748,6 +776,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_service_3_link",
+            "label": "Service Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this service's detail page. Content team sets this in WP.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "/services/",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -861,6 +903,20 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+          },
+          {
+            "key": "field_service_4_link",
+            "label": "Service Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "URL for this service's detail page. Content team sets this in WP.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "/services/",
+            "prepend": "",
+            "append": ""
           }
         ]
       },
@@ -1292,6 +1348,34 @@
         "prepend": "",
         "append": "",
         "maxlength": ""
+      },
+      {
+        "key": "field_cta_primary_button_url",
+        "label": "CTA Primary Button URL",
+        "name": "cta_primary_button_url",
+        "type": "url",
+        "instructions": "URL/link for the primary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "https://example.com/book",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cta_secondary_button_url",
+        "label": "CTA Secondary Button URL",
+        "name": "cta_secondary_button_url",
+        "type": "url",
+        "instructions": "URL/link for the secondary CTA button.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "tel:+15551234567",
+        "prepend": "",
+        "append": ""
       },
       {
         "key": "field_cta_image",

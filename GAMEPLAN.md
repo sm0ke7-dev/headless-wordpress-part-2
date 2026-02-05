@@ -24,7 +24,7 @@ Define everything that needs to be editable. This is the data model.
 
 - ~~ACF-based structured content wiring (headings, descriptions, buttons, images)~~
 - ~~Wire native post body + featured image — homepage fully done. `content.rendered` renders via `.wp-content` class, featured image pulls from `_embedded` via `getFeaturedImageUrl`.~~
-- **⬜ Featured image on service/location detail pages** — props are wired end-to-end (`getFeaturedImageUrl` → page → index → Header64) but image not rendering. Needs investigation next session.
+- **✅ Featured image on service/location detail pages** — code path confirmed correct (`getFeaturedImageUrl` → page → index → Header64). Posts simply don't have featured images set in WP yet. Content task: assign images in WP admin per service/location post. No code changes needed.
 - **⬜ Layout520/367/423 card images (homepage)** — ACF group fields defined in `acf-import.json` (pending import). Once imported + populated in WP, placeholder fallbacks will be replaced by real images.
 
 ## Phase 4 — SEO Layer
@@ -72,13 +72,14 @@ App Router project structure confirmed. `lib/wp.ts` fetch helpers with ISR (60s 
 - ~~All hardcoded strings converted to props sourced from WP. Every page component accepts and drills data. Known bugs fixed (nav links, RadioGroup duplicates, icon mismatches).~~
 - ~~Homepage native body + featured image — fully wired and working. `.wp-content` styles centralized in `globals.css` with fluid `clamp()` heading sizes. Fixed `source_url` bug in `getFeaturedImageUrl`.~~
 - ~~Navbar8 consolidated into shared `components/Navbar8.jsx`.~~
-- ⬜ **Featured image on service/location detail pages** — wiring is in place but image not rendering. Debug next session.
+- ~~**Featured image on service/location detail pages** — code path confirmed correct. Posts simply don't have featured images set in WP yet. Content task: assign images in WP admin. No code changes needed.~~ — DONE
 - ⬜ **Layout520/367/423 group fields** — `acf-import.json` ready to upload. Import → populate in WP → test.
 - ⬜ **ISR revalidate set to 5s for dev** — bump back to 60 (or higher) before deploy. `lib/wp.ts:39`.
 - ~~Testimonial22 section headings — wired from `data?.testimonials_section_heading` / `_subheading` — DONE~~
 - ~~Team5 section headings + "Join us" block — wired from `data?.team_section_*` / `team_join_*` — DONE~~
-- ⬜ **Layout520 "Learn more" buttons** — no `link` sub-field in the ACF feature groups, and the Button isn't wired to anything. Need to decide: per-card URL field in ACF, or single shared destination. Circle back later.
-- ⬜ **Footer9 all links** — logo, nav (Services + Locations columns), social, and legal links are all `href="#"`. Need confirmed slugs/URLs from WP and client before wiring. Logo also needs actual asset.
+- ~~**Layout520 "Learn more" buttons** — added `link` sub-fields to feature_1/2/3 in `acf-import.json`, wired buttons in `Layout520.jsx`. Same pattern as service cards.~~ — DONE
+- ~~**Footer9 all links** — consolidated into shared `components/Footer9.jsx` and wired to ACF Options Page (`site-settings`). All 6 pages now fetch global settings and pass to footer. See `acf-import-global-settings.json` for field structure.~~ — DONE
+- ~~**Full button wiring sweep** — all remaining unwired buttons across service-single and location-single pages are now linked via ACF URL fields. Two patterns applied consistently: `asChild` + child `<a>` for buttons without `iconRight`; wrapper `<a>` for `iconRight` buttons. Files touched: `service-(single)/Cta31`, `Layout22`, `Layout356`, `Faq4`; `location-(single)/Layout503` (header + per-tab). `create-wp-posts.js` updated with `cta_primary_button_url` / `cta_secondary_button_url` for all service + location posts.~~ — DONE
 
 ### Phase 4 — ✅ Complete
 - `generateMetadata` on all 6 page routes (title, description, OG, Twitter, canonical)
@@ -94,6 +95,7 @@ App Router project structure confirmed. `lib/wp.ts` fetch helpers with ISR (60s 
 - 5× `Header64.jsx` (about-us, services, service-single, locations, location-single) — Book + Call buttons added — DONE
 - `services/components/Cta31.jsx` — fallback defaults → "Book an Evaluation" / "Call Now" — DONE
 - `location-(single)/components/Contact6.jsx` — RadioGroup IDs fixed, Select options replaced, email/phone wired as mailto/tel links — DONE
+- **Brand color palette** — Deep teal (#0B4A4A) applied to conversion-focused sections. `tailwind.config.ts` updated with brand tokens. Teal backgrounds added to: Navbar8, Layout520 (features), all Cta31 components (home, services, about-us, locations), and Team5 sections (home, about-us). Creates visual rhythm with alternating white/teal sections. — DONE
 
 ### Phase 6 — ⬜ Not Started
 Core Web Vitals, image optimization, animation perf check, cross-browser smoke test.

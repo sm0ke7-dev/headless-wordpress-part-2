@@ -1,4 +1,4 @@
-import { getPage, getTestimonials, getTeamMembers } from "../../lib/wp";
+import { getPage, getTestimonials, getTeamMembers, getGlobalSettings } from "../../lib/wp";
 import { generateBreadcrumbSchema } from "../../lib/json-ld";
 import AboutPage from "../../about-us";
 import type { Metadata } from "next";
@@ -8,32 +8,33 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
   return {
-    title: pageData?.acf?.seo_title || "About Us | Our Story & Mission",
-    description: pageData?.acf?.seo_description || "Learn about our evidence-based approach to physical therapy and the team dedicated to your recovery.",
+    title: (pageData?.acf?.seo_title as string) || "About Us | Our Story & Mission",
+    description: (pageData?.acf?.seo_description as string) || "Learn about our evidence-based approach to physical therapy and the team dedicated to your recovery.",
     alternates: {
       canonical: `${baseUrl}/about-us`,
     },
     openGraph: {
-      title: pageData?.acf?.seo_title || "About Us | Our Story & Mission",
-      description: pageData?.acf?.seo_description || "Learn about our evidence-based approach to physical therapy and the team dedicated to your recovery.",
-      images: pageData?.acf?.seo_image?.url ? [{ url: pageData.acf.seo_image.url }] : [],
+      title: (pageData?.acf?.seo_title as string) || "About Us | Our Story & Mission",
+      description: (pageData?.acf?.seo_description as string) || "Learn about our evidence-based approach to physical therapy and the team dedicated to your recovery.",
+      images: (pageData?.acf?.seo_image as { url: string })?.url ? [{ url: (pageData.acf.seo_image as { url: string }).url }] : [],
       type: "website",
       url: `${baseUrl}/about-us`,
     },
     twitter: {
       card: "summary_large_image",
-      title: pageData?.acf?.seo_title || "About Us | Our Story & Mission",
-      description: pageData?.acf?.seo_description || "Learn about our evidence-based approach to physical therapy and the team dedicated to your recovery.",
-      images: pageData?.acf?.seo_image?.url ? [pageData.acf.seo_image.url] : [],
+      title: (pageData?.acf?.seo_title as string) || "About Us | Our Story & Mission",
+      description: (pageData?.acf?.seo_description as string) || "Learn about our evidence-based approach to physical therapy and the team dedicated to your recovery.",
+      images: (pageData?.acf?.seo_image as { url: string })?.url ? [(pageData.acf.seo_image as { url: string }).url] : [],
     },
   };
 }
 
 export default async function AboutUsPage() {
-  const [pageData, testimonials, teamMembers] = await Promise.all([
+  const [pageData, testimonials, teamMembers, globalSettings] = await Promise.all([
     getPage("about-us"),
     getTestimonials(),
     getTeamMembers(),
+    getGlobalSettings(),
   ]);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -51,6 +52,7 @@ export default async function AboutUsPage() {
         pageData={pageData?.acf}
         testimonials={testimonials}
         teamMembers={teamMembers}
+        globalSettings={globalSettings}
       />
     </>
   );

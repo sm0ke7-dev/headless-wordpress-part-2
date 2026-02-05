@@ -4,6 +4,15 @@ Always read `GAMEPLAN.md` and `COMPONENT_MAP.md` at the start of a session to un
 
 When a task is completed, update `GAMEPLAN.md` inline — a short note like `— DONE` next to the relevant item. Keep it minimal, just enough so a future session can orient quickly without reading code.
 
+## Living Documentation
+
+`ACF_WIRING_LEARNINGS.md` and `.claude/skills/acf-wire-page.md` contain patterns, workflows, and solutions discovered during ACF wiring work.
+
+**When you encounter a challenge and solve it:**
+- Update `ACF_WIRING_LEARNINGS.md` with the pattern, solution, or pitfall
+- Update `.claude/skills/acf-wire-page.md` if the workflow needs adjustment
+- Keep these files current so future sessions benefit from the learnings
+
 ## Relume Template Preservation Rule
 
 The Relume UI components are the design foundation. A designer will restyle them into the final product. Our role is strictly to wire the existing text and image placeholders into headless WordPress via ACF / REST API — not to redesign or restructure the components.
@@ -28,18 +37,4 @@ Never guess or infer slugs, hrefs, route paths, or link targets. This includes s
 
 - If the data is available in the codebase (e.g. WP REST API responses, existing fetch helpers, page.tsx files that already fetch and expose slugs), look it up before writing the link.
 - If it requires information we don't have (e.g. social media handles, real slugs from WP, legal page URLs), ask the user before writing the code — do not use placeholder values like `#` or made-up slugs.
-
-landing page sections*****
-### Begin sales components
-hero section
-features
-benefit
-cta
-### End sales components
-### Begin SEO components
-blog section=wordpress post body
-### End SEO Components
-### Begin Final CTA component
-cta
-### End Final CTA Components
 

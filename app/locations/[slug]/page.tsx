@@ -1,4 +1,4 @@
-import { getLocation, getLocations, getFeaturedImageUrl } from "../../../lib/wp";
+import { getLocation, getLocations, getFeaturedImageUrl, getGlobalSettings } from "../../../lib/wp";
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../../../lib/json-ld";
 import LocationSinglePage from "../../../location-(single)";
 import type { Metadata } from "next";
@@ -16,29 +16,32 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
   return {
-    title: locationData?.acf?.seo_title || `${locationData?.title?.rendered} | Physical Therapy Clinic`,
-    description: locationData?.acf?.seo_description || `Visit our ${locationData?.title?.rendered} physical therapy clinic. Modern facility with experienced clinicians.`,
+    title: (locationData?.acf?.seo_title as string) || `${locationData?.title?.rendered} | Physical Therapy Clinic`,
+    description: (locationData?.acf?.seo_description as string) || `Visit our ${locationData?.title?.rendered} physical therapy clinic. Modern facility with experienced clinicians.`,
     alternates: {
       canonical: `${baseUrl}/locations/${params.slug}`,
     },
     openGraph: {
-      title: locationData?.acf?.seo_title || `${locationData?.title?.rendered} | Physical Therapy Clinic`,
-      description: locationData?.acf?.seo_description || `Visit our ${locationData?.title?.rendered} physical therapy clinic. Modern facility with experienced clinicians.`,
-      images: locationData?.acf?.seo_image?.url ? [{ url: locationData.acf.seo_image.url }] : [],
+      title: (locationData?.acf?.seo_title as string) || `${locationData?.title?.rendered} | Physical Therapy Clinic`,
+      description: (locationData?.acf?.seo_description as string) || `Visit our ${locationData?.title?.rendered} physical therapy clinic. Modern facility with experienced clinicians.`,
+      images: (locationData?.acf?.seo_image as { url: string })?.url ? [{ url: (locationData.acf.seo_image as { url: string }).url }] : [],
       type: "website",
       url: `${baseUrl}/locations/${params.slug}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: locationData?.acf?.seo_title || `${locationData?.title?.rendered} | Physical Therapy Clinic`,
-      description: locationData?.acf?.seo_description || `Visit our ${locationData?.title?.rendered} physical therapy clinic. Modern facility with experienced clinicians.`,
-      images: locationData?.acf?.seo_image?.url ? [locationData.acf.seo_image.url] : [],
+      title: (locationData?.acf?.seo_title as string) || `${locationData?.title?.rendered} | Physical Therapy Clinic`,
+      description: (locationData?.acf?.seo_description as string) || `Visit our ${locationData?.title?.rendered} physical therapy clinic. Modern facility with experienced clinicians.`,
+      images: (locationData?.acf?.seo_image as { url: string })?.url ? [(locationData.acf.seo_image as { url: string }).url] : [],
     },
   };
 }
 
 export default async function LocationSingle({ params }: { params: { slug: string } }) {
-  const locationData = await getLocation(params.slug);
+  const [locationData, globalSettings] = await Promise.all([
+    getLocation(params.slug),
+    getGlobalSettings(),
+  ]);
 
   const localBusinessSchema = generateLocalBusinessSchema({
     title: locationData?.title?.rendered,
@@ -75,6 +78,7 @@ export default async function LocationSingle({ params }: { params: { slug: strin
         locationData={locationData?.acf}
         bodyContent={locationData?.content?.rendered ?? null}
         featuredImageUrl={getFeaturedImageUrl(locationData)}
+        globalSettings={globalSettings}
       />
     </>
   );

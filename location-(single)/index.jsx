@@ -6,9 +6,9 @@ import { Team5 } from "./components/Team5";
 import { Gallery18 } from "./components/Gallery18";
 import { Contact19 } from "./components/Contact19";
 import { Contact6 } from "./components/Contact6";
-import { Footer9 } from "./components/Footer9";
+import { Footer9 } from "../components/Footer9";
 
-export default function Page({ locationData, bodyContent, featuredImageUrl }) {
+export default function Page({ locationData, bodyContent, featuredImageUrl, globalSettings }) {
   return (
     <div>
       <Navbar8 />
@@ -23,7 +23,7 @@ export default function Page({ locationData, bodyContent, featuredImageUrl }) {
       <Gallery18 data={locationData} />
       <Contact19 data={locationData} />
       <Contact6 data={locationData} />
-      <Footer9 />
+      <Footer9 data={globalSettings} />
     </div>
   );
 }
