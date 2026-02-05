@@ -20,6 +20,24 @@
 | `services` | Plural | WP CPT query (all services) |
 | `service-(single)` | Dynamic | WP CPT single (by slug) |
 
+## Homepage ACF Audit
+
+Components already reading from `pageData.acf` — fields need to exist on the **Homepage Options Page** in WP. Repeaters marked with ×N = number of items expected.
+
+| Component | Status | ACF fields needed | Notes |
+|---|---|---|---|
+| **Header84** | ✅ Done | `hero_primary_button_text`, `hero_secondary_button_text` | Body + featured image use WP native fields |
+| **Layout520** | ✅ ACF defined — pending import | `features_section_eyebrow/heading/description`, `feature_1/2/3` groups (heading, description, image, icon) | Code reads `[data?.feature_1, …].filter(Boolean)` |
+| **Layout367** | ✅ ACF defined — pending import | `process_section_eyebrow/heading/description`, `process_step_1/2/3` groups (heading, description, icon, button_text, eyebrow, image) | Step 3 image is optional |
+| **Layout423** | ✅ ACF defined — pending import | `treatments_section_eyebrow/heading/description`, `treatment_1/2/3` groups (eyebrow, heading, description, image, link) | Links should point to service detail pages |
+| **Cta31** | ⬜ Needs ACF | `cta_heading`, `cta_description`, `cta_primary_button_text`, `cta_secondary_button_text`, `cta_image` | Single image, no repeater |
+| **Testimonial22** | ✅ Done | — | Pulls from `testimonial` CPT (ACF already built Phase 1) |
+| **Team5** | ✅ Done | — | Pulls from `team_member` CPT (ACF already built Phase 1) |
+| **Navbar8** | ⬜ Code fix | — | Mobile dropdown is Lorem ipsum; mobile CTAs say "Button". No ACF needed. |
+| **Footer9** | ⬜ Code fix | — | Fully hardcoded. No data prop. |
+
+**Total: 9 numbered groups + ~15 simple text/image fields** across 4 components. All defined in `acf-import.json` — upload via ACF Tools → Import.
+
 ## Known Bugs (fix during content wiring)
 
 | Bug | Where |

@@ -44,7 +44,14 @@ export function Layout525({ data }) {
     }
   ];
 
-  const services = data?.services_treatment && data.services_treatment.length > 0 ? data.services_treatment : defaultServices;
+  const acfServices = [
+    data?.service_1,
+    data?.service_2,
+    data?.service_3,
+    data?.service_4,
+  ].filter(Boolean);
+
+  const services = acfServices.length > 0 ? acfServices : defaultServices;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">

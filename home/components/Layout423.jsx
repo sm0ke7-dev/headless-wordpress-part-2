@@ -54,7 +54,8 @@ export function Layout423({ data }) {
     }
   ];
 
-  const treatments = data?.treatments && data.treatments.length > 0 ? data.treatments : defaultTreatments;
+  const acfTreatments = [data?.treatment_1, data?.treatment_2, data?.treatment_3].filter(Boolean);
+  const treatments = acfTreatments.length > 0 ? acfTreatments : defaultTreatments;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">

@@ -19,8 +19,8 @@ export default function Page({ pageData, testimonials, teamMembers, featuredImag
       <Layout520 data={pageData?.acf} />
       <Layout367 data={pageData?.acf} />
       <Layout423 data={pageData?.acf} />
-      <Testimonial22 testimonials={testimonials} />
-      <Team5 teamMembers={teamMembers} />
+      <Testimonial22 testimonials={testimonials} data={pageData?.acf} />
+      <Team5 teamMembers={teamMembers} data={pageData?.acf} />
       <Cta31 data={pageData?.acf} />
       <Footer9 />
     </div>

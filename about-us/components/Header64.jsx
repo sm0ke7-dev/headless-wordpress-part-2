@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@relume_io/relume-ui";
 import React from "react";
 
 export function Header64({ data }) {
@@ -15,6 +16,10 @@ export function Header64({ data }) {
         <p className="md:text-md">
           {description}
         </p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
+          <Button title="Book">Book</Button>
+          <Button title="Call" variant="secondary">Call</Button>
+        </div>
       </div>
     </section>
   );

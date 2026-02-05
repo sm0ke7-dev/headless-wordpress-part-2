@@ -25,7 +25,7 @@ Define everything that needs to be editable. This is the data model.
 - ~~ACF-based structured content wiring (headings, descriptions, buttons, images)~~
 - ~~Wire native post body + featured image — homepage fully done. `content.rendered` renders via `.wp-content` class, featured image pulls from `_embedded` via `getFeaturedImageUrl`.~~
 - **⬜ Featured image on service/location detail pages** — props are wired end-to-end (`getFeaturedImageUrl` → page → index → Header64) but image not rendering. Needs investigation next session.
-- **⬜ Layout520 feature card images (homepage)** — 3 cards use dead Relume placeholder URLs. Need ACF repeater field `features` with an image per item, then wire `data.features` array through to the component (already checks for it on line 36).
+- **⬜ Layout520/367/423 card images (homepage)** — ACF group fields defined in `acf-import.json` (pending import). Once imported + populated in WP, placeholder fallbacks will be replaced by real images.
 
 ## Phase 4 — SEO Layer
 
@@ -73,8 +73,12 @@ App Router project structure confirmed. `lib/wp.ts` fetch helpers with ISR (60s 
 - ~~Homepage native body + featured image — fully wired and working. `.wp-content` styles centralized in `globals.css` with fluid `clamp()` heading sizes. Fixed `source_url` bug in `getFeaturedImageUrl`.~~
 - ~~Navbar8 consolidated into shared `components/Navbar8.jsx`.~~
 - ⬜ **Featured image on service/location detail pages** — wiring is in place but image not rendering. Debug next session.
-- ⬜ **Layout520 feature card images** — dead placeholder URLs. Need ACF repeater + wiring.
+- ⬜ **Layout520/367/423 group fields** — `acf-import.json` ready to upload. Import → populate in WP → test.
 - ⬜ **ISR revalidate set to 5s for dev** — bump back to 60 (or higher) before deploy. `lib/wp.ts:39`.
+- ~~Testimonial22 section headings — wired from `data?.testimonials_section_heading` / `_subheading` — DONE~~
+- ~~Team5 section headings + "Join us" block — wired from `data?.team_section_*` / `team_join_*` — DONE~~
+- ⬜ **Layout520 "Learn more" buttons** — no `link` sub-field in the ACF feature groups, and the Button isn't wired to anything. Need to decide: per-card URL field in ACF, or single shared destination. Circle back later.
+- ⬜ **Footer9 all links** — logo, nav (Services + Locations columns), social, and legal links are all `href="#"`. Need confirmed slugs/URLs from WP and client before wiring. Logo also needs actual asset.
 
 ### Phase 4 — ✅ Complete
 - `generateMetadata` on all 6 page routes (title, description, OG, Twitter, canonical)
@@ -85,12 +89,11 @@ App Router project structure confirmed. `lib/wp.ts` fetch helpers with ISR (60s 
 - Heading audit: fixed 2 rogue H1s (Layout503.jsx → H2, Layout356.jsx → H3). One H1 per page confirmed.
 - **⬜ Deferred — JSON-LD schema wiring to ACF:** `LocalBusiness` (homepage), `Service` (provider name), and some `LocalBusiness` fallbacks in `lib/json-ld.ts` are still hardcoded. These need to be wired to the corresponding ACF fields. Not a priority — revisit after Phase 5 + 6.
 
-### Phase 5 — 🔶 In Progress
-Audit complete. 8 files, 10 changes pending:
-- `home/components/Navbar8.jsx` — mobile CTA buttons still say "Button" (should be Call / Book)
-- 5× `Header64.jsx` (about-us, services, service-single, locations, location-single) — missing above-fold CTAs, need Book + Call buttons added
-- `services/components/Cta31.jsx` — fallback defaults "Evaluate" / "Insurance" → "Book an Evaluation" / "Call Now"
-- `location-(single)/components/Contact6.jsx` — 3 fixes: RadioGroup IDs have broken `#` prefix, Select has placeholder options, email/phone not clickable links
+### Phase 5 — ✅ Complete
+- `home/components/Navbar8.jsx` — mobile CTA buttons "Button" → "Call" / "Book" — DONE
+- 5× `Header64.jsx` (about-us, services, service-single, locations, location-single) — Book + Call buttons added — DONE
+- `services/components/Cta31.jsx` — fallback defaults → "Book an Evaluation" / "Call Now" — DONE
+- `location-(single)/components/Contact6.jsx` — RadioGroup IDs fixed, Select options replaced, email/phone wired as mailto/tel links — DONE
 
 ### Phase 6 — ⬜ Not Started
 Core Web Vitals, image optimization, animation perf check, cross-browser smoke test.

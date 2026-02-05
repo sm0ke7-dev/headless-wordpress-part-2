@@ -763,11 +763,11 @@ export function Navbar8() {
                 </AnimatePresence>
               </div>
               <div className="mt-6 flex flex-col gap-4">
-                <Button title="Button" variant="secondary" size="sm">
-                  Button
+                <Button title="Call" variant="secondary" size="sm">
+                  Call
                 </Button>
-                <Button title="Button" size="sm">
-                  Button
+                <Button title="Book" size="sm">
+                  Book
                 </Button>
               </div>
             </div>

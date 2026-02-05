@@ -6,8 +6,8 @@ import React from "react";
 export function Cta31({ data }) {
   const heading = data?.cta_heading || "Start your recovery today";
   const description = data?.cta_description || "We'll assess what's wrong and build a plan that works for your life.";
-  const primaryButtonText = data?.cta_primary_button_text || "Evaluate";
-  const secondaryButtonText = data?.cta_secondary_button_text || "Insurance";
+  const primaryButtonText = data?.cta_primary_button_text || "Book an Evaluation";
+  const secondaryButtonText = data?.cta_secondary_button_text || "Call Now";
   const image = data?.cta_image || { url: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg", alt: "CTA image" };
 
   return (

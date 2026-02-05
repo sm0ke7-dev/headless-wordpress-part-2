@@ -5,7 +5,7 @@ import React from "react";
 import { BiLogoDribbble, BiLogoLinkedinSquare } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 
-export function Team5({ teamMembers = [] }) {
+export function Team5({ teamMembers = [], data }) {
   // Fallback team members if no data from WordPress
   const defaultTeamMembers = [
     {
@@ -71,17 +71,23 @@ export function Team5({ teamMembers = [] }) {
   ];
 
   const displayTeamMembers = teamMembers.length > 0 ? teamMembers : defaultTeamMembers;
+  const eyebrow = data?.team_section_eyebrow || "Expertise";
+  const heading = data?.team_section_heading || "Our clinicians";
+  const description = data?.team_section_description || "Licensed specialists trained in evidence-based rehabilitation.";
+  const joinHeading = data?.team_join_heading || "Join us";
+  const joinDescription = data?.team_join_description || "We're building a team that values clarity and results.";
+  const joinButton = data?.team_join_button || "Open positions";
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold md:mb-4">Expertise</p>
+          <p className="mb-3 font-semibold md:mb-4">{eyebrow}</p>
           <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-            Our clinicians
+            {heading}
           </h2>
           <p className="md:text-md">
-            Licensed specialists trained in evidence-based rehabilitation.
+            {description}
           </p>
         </div>
         <div className="grid grid-cols-1 items-start justify-center gap-x-8 gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
@@ -125,14 +131,14 @@ export function Team5({ teamMembers = [] }) {
         </div>
         <div className="mx-auto mt-14 w-full max-w-md text-center md:mt-20 lg:mt-24">
           <h4 className="mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
-            Join us
+            {joinHeading}
           </h4>
           <p className="md:text-md">
-            We're building a team that values clarity and results.
+            {joinDescription}
           </p>
           <div className="mt-6 flex items-center justify-center gap-x-4 text-center md:mt-8">
-            <Button title="Open positions" variant="secondary">
-              Open positions
+            <Button title={joinButton} variant="secondary">
+              {joinButton}
             </Button>
           </div>
         </div>

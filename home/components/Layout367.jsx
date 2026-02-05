@@ -34,7 +34,8 @@ export function Layout367({ data }) {
     }
   ];
 
-  const steps = data?.process_steps && data.process_steps.length > 0 ? data.process_steps : defaultSteps;
+  const acfSteps = [data?.process_step_1, data?.process_step_2, data?.process_step_3].filter(Boolean);
+  const steps = acfSteps.length > 0 ? acfSteps : defaultSteps;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">

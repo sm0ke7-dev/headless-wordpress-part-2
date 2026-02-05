@@ -41,11 +41,11 @@ export function Contact6({ data }) {
           <div className="grid grid-cols-1 gap-4 py-2">
             <div className="flex items-center gap-4">
               <BiEnvelope className="size-6 flex-none" />
-              <p>{email}</p>
+              <a href={`mailto:${email}`} className="hover:underline">{email}</a>
             </div>
             <div className="flex items-center gap-4">
               <BiPhone className="size-6 flex-none" />
-              <p>{phone}</p>
+              <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="hover:underline">{phone}</a>
             </div>
             <div className="flex items-center gap-4">
               <BiMap className="size-6 flex-none" />
@@ -89,9 +89,11 @@ export function Contact6({ data }) {
                 <SelectValue placeholder="Select one" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="first-choice">First Choice</SelectItem>
-                <SelectItem value="second-choice">Second Choice</SelectItem>
-                <SelectItem value="third-choice">Third Choice</SelectItem>
+                <SelectItem value="back-pain">Back pain</SelectItem>
+                <SelectItem value="neck-pain">Neck pain</SelectItem>
+                <SelectItem value="sports-injury">Sports injury</SelectItem>
+                <SelectItem value="post-surgery">Post-surgery recovery</SelectItem>
+                <SelectItem value="joint-pain">Joint pain</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -99,28 +101,28 @@ export function Contact6({ data }) {
             <Label className="mb-3 md:mb-4">Which best describes you?</Label>
             <RadioGroup className="grid grid-cols-2 gap-x-6 gap-y-3.5">
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="Busy adult" id="#first_choice" />
-                <Label htmlFor="#first_choice">Busy adult</Label>
+                <RadioGroupItem value="Busy adult" id="first_choice" />
+                <Label htmlFor="first_choice">Busy adult</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="Athlete" id="#second_choice" />
-                <Label htmlFor="#second_choice">Athlete</Label>
+                <RadioGroupItem value="Athlete" id="second_choice" />
+                <Label htmlFor="second_choice">Athlete</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="Post-op patient" id="#third_choice" />
-                <Label htmlFor="#third_choice">Post-op patient</Label>
+                <RadioGroupItem value="Post-op patient" id="third_choice" />
+                <Label htmlFor="third_choice">Post-op patient</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="Chronic pain" id="#fourth_choice" />
-                <Label htmlFor="#fourth_choice">Chronic pain</Label>
+                <RadioGroupItem value="Chronic pain" id="fourth_choice" />
+                <Label htmlFor="fourth_choice">Chronic pain</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="Injury recovery" id="#fifth_choice" />
-                <Label htmlFor="#fifth_choice">Injury recovery</Label>
+                <RadioGroupItem value="Injury recovery" id="fifth_choice" />
+                <Label htmlFor="fifth_choice">Injury recovery</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="Other" id="#other" />
-                <Label htmlFor="#other">Other</Label>
+                <RadioGroupItem value="Other" id="other" />
+                <Label htmlFor="other">Other</Label>
               </div>
             </RadioGroup>
           </div>

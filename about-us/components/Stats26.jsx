@@ -24,7 +24,13 @@ export function Stats26({ data }) {
     }
   ];
 
-  const stats = data?.stats && data.stats.length > 0 ? data.stats : defaultStats;
+  const acfStats = [
+    data?.stat_1,
+    data?.stat_2,
+    data?.stat_3,
+  ].filter(Boolean);
+
+  const stats = acfStats.length > 0 ? acfStats : defaultStats;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">

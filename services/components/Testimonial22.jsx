@@ -35,7 +35,13 @@ export function Testimonial22({ data }) {
     }
   ];
 
-  const testimonials = data?.testimonials && data.testimonials.length > 0 ? data.testimonials : defaultTestimonials;
+  const acfTestimonials = [
+    data?.testimonial_1,
+    data?.testimonial_2,
+    data?.testimonial_3,
+  ].filter(Boolean);
+
+  const testimonials = acfTestimonials.length > 0 ? acfTestimonials : defaultTestimonials;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">

@@ -37,7 +37,16 @@ export function Faq4({ data }) {
     }
   ];
 
-  const faqs = data?.faqs && data.faqs.length > 0 ? data.faqs : defaultFaqs;
+  const acfFaqs = [
+    data?.faq_1,
+    data?.faq_2,
+    data?.faq_3,
+    data?.faq_4,
+    data?.faq_5,
+    data?.faq_6,
+  ].filter(Boolean);
+
+  const faqs = acfFaqs.length > 0 ? acfFaqs : defaultFaqs;
 
   const footerHeading = data?.faq_footer_heading || "More questions?";
   const footerDescription = data?.faq_footer_description || "Reach out anytime. We're here to help.";

@@ -33,7 +33,8 @@ export function Layout520({ data }) {
     }
   ];
 
-  const features = data?.features && data.features.length > 0 ? data.features : defaultFeatures;
+  const acfFeatures = [data?.feature_1, data?.feature_2, data?.feature_3].filter(Boolean);
+  const features = acfFeatures.length > 0 ? acfFeatures : defaultFeatures;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">

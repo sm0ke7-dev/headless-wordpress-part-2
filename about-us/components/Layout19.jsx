@@ -15,9 +15,13 @@ export function Layout19({ data }) {
     { text: "Licensed clinicians with specialized expertise" }
   ];
 
-  const bulletPoints = data?.about_story_points && data.about_story_points.length > 0
-    ? data.about_story_points
-    : defaultBulletPoints;
+  const acfPoints = [
+    data?.about_story_point_1,
+    data?.about_story_point_2,
+    data?.about_story_point_3,
+  ].filter(Boolean).map(text => ({ text }));
+
+  const bulletPoints = acfPoints.length > 0 ? acfPoints : defaultBulletPoints;
 
   const primaryButtonText = data?.about_story_primary_button_text || "Learn more";
   const secondaryButtonText = data?.about_story_secondary_button_text || "Visit";

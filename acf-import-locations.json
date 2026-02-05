@@ -1,0 +1,372 @@
+{
+  "key": "group_locations_page",
+  "title": "Locations Page Fields",
+  "fields": [
+    {
+      "key": "field_locations_hero_heading",
+      "label": "Hero Heading",
+      "name": "locations_hero_heading",
+      "type": "text",
+      "instructions": "Main heading for the locations page hero section",
+      "required": 0,
+      "default_value": "Our locations",
+      "placeholder": "Our locations"
+    },
+    {
+      "key": "field_locations_hero_description",
+      "label": "Hero Description",
+      "name": "locations_hero_description",
+      "type": "textarea",
+      "instructions": "Description text for the locations page hero section",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Find a location near you"
+    },
+    {
+      "key": "field_locations_hero_primary_button_text",
+      "label": "Hero Primary Button Text",
+      "name": "locations_hero_primary_button_text",
+      "type": "text",
+      "instructions": "Text for the primary call-to-action button in hero",
+      "required": 0,
+      "default_value": "Book",
+      "placeholder": "Book"
+    },
+    {
+      "key": "field_locations_hero_primary_button_url",
+      "label": "Hero Primary Button URL",
+      "name": "locations_hero_primary_button_url",
+      "type": "url",
+      "instructions": "URL/link for the primary button",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://example.com/book"
+    },
+    {
+      "key": "field_locations_hero_secondary_button_text",
+      "label": "Hero Secondary Button Text",
+      "name": "locations_hero_secondary_button_text",
+      "type": "text",
+      "instructions": "Text for the secondary call-to-action button in hero",
+      "required": 0,
+      "default_value": "Call",
+      "placeholder": "Call"
+    },
+    {
+      "key": "field_locations_hero_secondary_button_url",
+      "label": "Hero Secondary Button URL",
+      "name": "locations_hero_secondary_button_url",
+      "type": "url",
+      "instructions": "URL/link for the secondary button (can be tel: link)",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "tel:+1234567890"
+    },
+    {
+      "key": "field_faq_heading",
+      "label": "FAQ Section Heading",
+      "name": "faq_heading",
+      "type": "text",
+      "instructions": "Main heading for the FAQ section",
+      "required": 0,
+      "default_value": "FAQs",
+      "placeholder": "FAQs"
+    },
+    {
+      "key": "field_faq_description",
+      "label": "FAQ Section Description",
+      "name": "faq_description",
+      "type": "textarea",
+      "instructions": "Description text for the FAQ section",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Find answers to common questions"
+    },
+    {
+      "key": "field_faq_1",
+      "label": "FAQ 1",
+      "name": "faq_1",
+      "type": "group",
+      "instructions": "First FAQ item",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_faq_1_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Question text"
+        },
+        {
+          "key": "field_faq_1_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Answer text"
+        }
+      ]
+    },
+    {
+      "key": "field_faq_2",
+      "label": "FAQ 2",
+      "name": "faq_2",
+      "type": "group",
+      "instructions": "Second FAQ item",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_faq_2_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Question text"
+        },
+        {
+          "key": "field_faq_2_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Answer text"
+        }
+      ]
+    },
+    {
+      "key": "field_faq_3",
+      "label": "FAQ 3",
+      "name": "faq_3",
+      "type": "group",
+      "instructions": "Third FAQ item",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_faq_3_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Question text"
+        },
+        {
+          "key": "field_faq_3_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Answer text"
+        }
+      ]
+    },
+    {
+      "key": "field_faq_4",
+      "label": "FAQ 4",
+      "name": "faq_4",
+      "type": "group",
+      "instructions": "Fourth FAQ item",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_faq_4_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Question text"
+        },
+        {
+          "key": "field_faq_4_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Answer text"
+        }
+      ]
+    },
+    {
+      "key": "field_faq_5",
+      "label": "FAQ 5",
+      "name": "faq_5",
+      "type": "group",
+      "instructions": "Fifth FAQ item",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_faq_5_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Question text"
+        },
+        {
+          "key": "field_faq_5_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Answer text"
+        }
+      ]
+    },
+    {
+      "key": "field_faq_6",
+      "label": "FAQ 6",
+      "name": "faq_6",
+      "type": "group",
+      "instructions": "Sixth FAQ item",
+      "required": 0,
+      "sub_fields": [
+        {
+          "key": "field_faq_6_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Question text"
+        },
+        {
+          "key": "field_faq_6_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Answer text"
+        }
+      ]
+    },
+    {
+      "key": "field_faq_footer_heading",
+      "label": "FAQ Footer Heading",
+      "name": "faq_footer_heading",
+      "type": "text",
+      "instructions": "Heading for the footer CTA within the FAQ section",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Still have questions?"
+    },
+    {
+      "key": "field_faq_footer_description",
+      "label": "FAQ Footer Description",
+      "name": "faq_footer_description",
+      "type": "textarea",
+      "instructions": "Description for the footer CTA within the FAQ section",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Contact us for more information"
+    },
+    {
+      "key": "field_faq_footer_button_text",
+      "label": "FAQ Footer Button Text",
+      "name": "faq_footer_button_text",
+      "type": "text",
+      "instructions": "Button text for the footer CTA within the FAQ section",
+      "required": 0,
+      "default_value": "Contact",
+      "placeholder": "Contact"
+    },
+    {
+      "key": "field_cta_heading",
+      "label": "CTA Heading",
+      "name": "cta_heading",
+      "type": "text",
+      "instructions": "Main heading for the CTA section",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Ready to get started?"
+    },
+    {
+      "key": "field_cta_description",
+      "label": "CTA Description",
+      "name": "cta_description",
+      "type": "textarea",
+      "instructions": "Description text for the CTA section",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Schedule your appointment today"
+    },
+    {
+      "key": "field_cta_primary_button_text",
+      "label": "CTA Primary Button Text",
+      "name": "cta_primary_button_text",
+      "type": "text",
+      "instructions": "Text for the primary CTA button",
+      "required": 0,
+      "default_value": "Button",
+      "placeholder": "Book now"
+    },
+    {
+      "key": "field_cta_primary_button_url",
+      "label": "CTA Primary Button URL",
+      "name": "cta_primary_button_url",
+      "type": "url",
+      "instructions": "URL/link for the primary CTA button",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://example.com/book"
+    },
+    {
+      "key": "field_cta_secondary_button_text",
+      "label": "CTA Secondary Button Text",
+      "name": "cta_secondary_button_text",
+      "type": "text",
+      "instructions": "Text for the secondary CTA button",
+      "required": 0,
+      "default_value": "Button",
+      "placeholder": "Learn more"
+    },
+    {
+      "key": "field_cta_secondary_button_url",
+      "label": "CTA Secondary Button URL",
+      "name": "cta_secondary_button_url",
+      "type": "url",
+      "instructions": "URL/link for the secondary CTA button",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "https://example.com/learn-more"
+    },
+    {
+      "key": "field_cta_image",
+      "label": "CTA Image",
+      "name": "cta_image",
+      "type": "image",
+      "instructions": "Background image for the CTA section",
+      "required": 0,
+      "return_format": "array",
+      "preview_size": "medium",
+      "library": "all"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post",
+        "operator": "==",
+        "value": "9"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": ""
+}

@@ -55,7 +55,13 @@ export function Layout423({ data }) {
     }
   ];
 
-  const features = data?.services_features && data.services_features.length > 0 ? data.services_features : defaultFeatures;
+  const acfFeatures = [
+    data?.feature_1,
+    data?.feature_2,
+    data?.feature_3,
+  ].filter(Boolean);
+
+  const features = acfFeatures.length > 0 ? acfFeatures : defaultFeatures;
 
   const hoverState = useRelume();
   return (

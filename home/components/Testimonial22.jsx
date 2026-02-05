@@ -4,7 +4,7 @@ import { Button } from "@relume_io/relume-ui";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
 
-export function Testimonial22({ testimonials = [] }) {
+export function Testimonial22({ testimonials = [], data }) {
   // Fallback testimonials if no data from WordPress
   const defaultTestimonials = [
     {
@@ -37,15 +37,17 @@ export function Testimonial22({ testimonials = [] }) {
   ];
 
   const displayTestimonials = testimonials.length > 0 ? testimonials : defaultTestimonials;
+  const heading = data?.testimonials_section_heading || "Real results";
+  const subheading = data?.testimonials_section_subheading || "What our patients say";
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-            Real results
+            {heading}
           </h2>
-          <p className="md:text-md">What our patients say</p>
+          <p className="md:text-md">{subheading}</p>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {displayTestimonials.slice(0, 3).map((testimonial, index) => (

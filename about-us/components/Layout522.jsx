@@ -40,7 +40,13 @@ export function Layout522({ data }) {
     }
   ];
 
-  const principles = data?.principles && data.principles.length > 0 ? data.principles : defaultPrinciples;
+  const acfPrinciples = [
+    data?.principle_1,
+    data?.principle_2,
+    data?.principle_3,
+  ].filter(Boolean);
+
+  const principles = acfPrinciples.length > 0 ? acfPrinciples : defaultPrinciples;
 
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
