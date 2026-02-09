@@ -4,6 +4,7 @@ import { Button, useMediaQuery } from "@relume_io/relume-ui";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { RxChevronDown } from "react-icons/rx";
+import Link from "next/link";
 
 const useRelume = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,32 +46,32 @@ export function Navbar8() {
       className="relative z-[999] flex min-h-16 w-full items-center border-b border-white/20 bg-brand-primary px-[5%] text-white md:min-h-18"
     >
       <div className="mx-auto flex size-full max-w-full items-center justify-between">
-        <a href="/">
+        <Link href="/">
           <img
             src="https://d22po4pjz3o32e.cloudfront.net/logo-image.svg"
             alt="Logo image"
           />
-        </a>
+        </Link>
         <div className="absolute hidden h-screen overflow-auto border-b border-border-primary bg-brand-primary px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-6 lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-between lg:border-none lg:bg-none lg:px-0 lg:pt-0">
           <div className="flex flex-col items-center lg:flex-row">
-            <a
+            <Link
               href="/about-us"
               className="relative block w-auto py-3 text-md lg:inline-block lg:px-4 lg:py-6 lg:text-base"
             >
               About us
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="relative block w-auto py-3 text-md lg:inline-block lg:px-4 lg:py-6 lg:text-base"
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="/locations"
               className="relative block w-auto py-3 text-md lg:inline-block lg:px-4 lg:py-6 lg:text-base"
             >
               Locations
-            </a>
+            </Link>
             <div
               onMouseEnter={useActive.openOnDesktopDropdownMenu}
               onMouseLeave={useActive.closeOnDesktopDropdownMenu}
@@ -451,15 +452,15 @@ export function Navbar8() {
             className="absolute left-0 right-0 top-0 block h-dvh overflow-auto border-b border-border-primary bg-brand-primary px-[5%] pb-8 pt-4"
           >
             <div className="flex flex-col">
-              <a href="/about-us" className="block py-3 text-md">
+              <Link href="/about-us" className="block py-3 text-md">
                 About us
-              </a>
-              <a href="/services" className="block py-3 text-md">
+              </Link>
+              <Link href="/services" className="block py-3 text-md">
                 Services
-              </a>
-              <a href="/locations" className="block py-3 text-md">
+              </Link>
+              <Link href="/locations" className="block py-3 text-md">
                 Locations
-              </a>
+              </Link>
               <div>
                 <button
                   className="relative flex w-full items-center justify-between whitespace-nowrap py-3 text-md lg:w-auto lg:justify-start lg:gap-2 lg:px-4 lg:py-6 lg:text-base"
