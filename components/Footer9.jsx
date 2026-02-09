@@ -9,6 +9,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 const useForm = () => {
   const [email, setEmail] = useState("");
@@ -107,13 +108,13 @@ export function Footer9({ data }) {
       <div className="container">
         <div className="grid grid-cols-1 gap-x-[8vw] gap-y-12 border border-border-primary p-8 md:gap-y-16 md:p-12 lg:grid-cols-[0.75fr_1fr] lg:gap-y-4">
           <div className="flex flex-col">
-            <a href="/" className="mb-5 md:mb-6">
+            <Link href="/" className="mb-5 md:mb-6">
               <img
                 src={logo.url}
                 alt={logo.alt || "Logo image"}
                 className="inline-block"
               />
-            </a>
+            </Link>
             <p className="mb-5 md:mb-6">
               {newsletterHeading}
             </p>
